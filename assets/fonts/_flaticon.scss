@@ -1,0 +1,162 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 10/06/2019 23:33
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-business-and-finance:before { content: "\f100"; }
+.flaticon-contact:before { content: "\f101"; }
+.flaticon-client:before { content: "\f102"; }
+.flaticon-urban:before { content: "\f103"; }
+.flaticon-sketch:before { content: "\f104"; }
+.flaticon-notebook:before { content: "\f105"; }
+.flaticon-truck:before { content: "\f106"; }
+.flaticon-clock:before { content: "\f107"; }
+.flaticon-man:before { content: "\f108"; }
+.flaticon-cube:before { content: "\f109"; }
+.flaticon-design:before { content: "\f10a"; }
+.flaticon-hotel:before { content: "\f10b"; }
+.flaticon-lawyer:before { content: "\f10c"; }
+.flaticon-legal:before { content: "\f10d"; }
+.flaticon-contractor:before { content: "\f10e"; }
+.flaticon-lawyer-1:before { content: "\f10f"; }
+.flaticon-code:before { content: "\f110"; }
+.flaticon-data:before { content: "\f111"; }
+.flaticon-blockchain:before { content: "\f112"; }
+.flaticon-refresh:before { content: "\f113"; }
+.flaticon-login:before { content: "\f114"; }
+.flaticon-logout:before { content: "\f115"; }
+.flaticon-account:before { content: "\f116"; }
+.flaticon-toolbox:before { content: "\f117"; }
+.flaticon-plumber:before { content: "\f118"; }
+.flaticon-screwdriver:before { content: "\f119"; }
+.flaticon-electrician:before { content: "\f11a"; }
+.flaticon-carrier:before { content: "\f11b"; }
+.flaticon-security-camera:before { content: "\f11c"; }
+.flaticon-icon-1423904:before { content: "\f11d"; }
+.flaticon-chip:before { content: "\f11e"; }
+.flaticon-idea:before { content: "\f11f"; }
+.flaticon-boss:before { content: "\f120"; }
+.flaticon-sensor:before { content: "\f121"; }
+.flaticon-move:before { content: "\f122"; }
+.flaticon-fire:before { content: "\f123"; }
+.flaticon-tenant:before { content: "\f124"; }
+.flaticon-tenant-1:before { content: "\f125"; }
+.flaticon-door:before { content: "\f126"; }
+.flaticon-exit:before { content: "\f127"; }
+.flaticon-lift:before { content: "\f128"; }
+.flaticon-construction-and-tools:before { content: "\f129"; }
+.flaticon-fix:before { content: "\f12a"; }
+.flaticon-school-material:before { content: "\f12b"; }
+.flaticon-toolbox-1:before { content: "\f12c"; }
+.flaticon-thief:before { content: "\f12d"; }
+.flaticon-hacker:before { content: "\f12e"; }
+.flaticon-hacker-1:before { content: "\f12f"; }
+.flaticon-algorithm:before { content: "\f130"; }
+.flaticon-robot:before { content: "\f131"; }
+.flaticon-model:before { content: "\f132"; }
+.flaticon-blueprint:before { content: "\f133"; }
+.flaticon-payment:before { content: "\f134"; }
+.flaticon-institution:before { content: "\f135"; }
+.flaticon-business-and-finance-1:before { content: "\f136"; }
+.flaticon-contract:before { content: "\f137"; }
+.flaticon-constructor:before { content: "\f138"; }
+.flaticon-budget:before { content: "\f139"; }
+.flaticon-hard:before { content: "\f13a"; }
+.flaticon-survey:before { content: "\f13b"; }
+.flaticon-survey-1:before { content: "\f13c"; }
+    
+    $font-Flaticon-business-and-finance: "\f100";
+    $font-Flaticon-contact: "\f101";
+    $font-Flaticon-client: "\f102";
+    $font-Flaticon-urban: "\f103";
+    $font-Flaticon-sketch: "\f104";
+    $font-Flaticon-notebook: "\f105";
+    $font-Flaticon-truck: "\f106";
+    $font-Flaticon-clock: "\f107";
+    $font-Flaticon-man: "\f108";
+    $font-Flaticon-cube: "\f109";
+    $font-Flaticon-design: "\f10a";
+    $font-Flaticon-hotel: "\f10b";
+    $font-Flaticon-lawyer: "\f10c";
+    $font-Flaticon-legal: "\f10d";
+    $font-Flaticon-contractor: "\f10e";
+    $font-Flaticon-lawyer-1: "\f10f";
+    $font-Flaticon-code: "\f110";
+    $font-Flaticon-data: "\f111";
+    $font-Flaticon-blockchain: "\f112";
+    $font-Flaticon-refresh: "\f113";
+    $font-Flaticon-login: "\f114";
+    $font-Flaticon-logout: "\f115";
+    $font-Flaticon-account: "\f116";
+    $font-Flaticon-toolbox: "\f117";
+    $font-Flaticon-plumber: "\f118";
+    $font-Flaticon-screwdriver: "\f119";
+    $font-Flaticon-electrician: "\f11a";
+    $font-Flaticon-carrier: "\f11b";
+    $font-Flaticon-security-camera: "\f11c";
+    $font-Flaticon-icon-1423904: "\f11d";
+    $font-Flaticon-chip: "\f11e";
+    $font-Flaticon-idea: "\f11f";
+    $font-Flaticon-boss: "\f120";
+    $font-Flaticon-sensor: "\f121";
+    $font-Flaticon-move: "\f122";
+    $font-Flaticon-fire: "\f123";
+    $font-Flaticon-tenant: "\f124";
+    $font-Flaticon-tenant-1: "\f125";
+    $font-Flaticon-door: "\f126";
+    $font-Flaticon-exit: "\f127";
+    $font-Flaticon-lift: "\f128";
+    $font-Flaticon-construction-and-tools: "\f129";
+    $font-Flaticon-fix: "\f12a";
+    $font-Flaticon-school-material: "\f12b";
+    $font-Flaticon-toolbox-1: "\f12c";
+    $font-Flaticon-thief: "\f12d";
+    $font-Flaticon-hacker: "\f12e";
+    $font-Flaticon-hacker-1: "\f12f";
+    $font-Flaticon-algorithm: "\f130";
+    $font-Flaticon-robot: "\f131";
+    $font-Flaticon-model: "\f132";
+    $font-Flaticon-blueprint: "\f133";
+    $font-Flaticon-payment: "\f134";
+    $font-Flaticon-institution: "\f135";
+    $font-Flaticon-business-and-finance-1: "\f136";
+    $font-Flaticon-contract: "\f137";
+    $font-Flaticon-constructor: "\f138";
+    $font-Flaticon-budget: "\f139";
+    $font-Flaticon-hard: "\f13a";
+    $font-Flaticon-survey: "\f13b";
+    $font-Flaticon-survey-1: "\f13c";

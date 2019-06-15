@@ -1,0 +1,532 @@
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <script>
+	function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+	 function include1HTML() {
+          var z, i, elmnt, dude, dude2, file, xhttp;
+          /*loop through a collection of all HTML elements:*/
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+			var user = getCookie("user");
+  if (user == "admin") {
+	file = elmnt.getAttribute("w3-include-html2");
+           }else {
+   
+    file = elmnt.getAttribute("w3-include-html1");
+			
+			
+  }
+            if (file) {
+              /*make an HTTP request using the attribute value as the file name:*/
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /*remove the attribute, and call this function once more:*/
+                 if (user == "admin") {
+	file = elmnt.removeAttribute("w3-include-html2");
+           }else {
+   
+    file = elmnt.removeAttribute("w3-include-html1");
+			
+			
+  }
+                  include1HTML();
+                }
+              }      
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /*exit the function:*/
+              return;
+            }
+          }
+        };
+        function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          /*loop through a collection of all HTML elements:*/
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+              /*make an HTTP request using the attribute value as the file name:*/
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /*remove the attribute, and call this function once more:*/
+                  elmnt.removeAttribute("w3-include-html");
+                  includeHTML();
+                }
+              }      
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /*exit the function:*/
+              return;
+            }
+          }
+        };
+        </script>
+         <div w3-include-html="head.html"></div> 
+<div w3-include-html="head1.html"></div>
+         <script>
+         includeHTML();
+         </script>
+    
+
+</head>
+<body>
+
+
+
+<script>
+var itens = null;
+$.getJSON("http://ec2-18-130-176-221.eu-west-2.compute.amazonaws.com:3000/api/Assistant", function(data) {
+  itens = data;
+  itens.forEach(function(item) {
+    console.log(item);
+  });
+});
+console.log(itens);
+</script>
+
+        <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            
+            <div w3-include-html1="menu.html"></div> 
+			<div w3-include-html2="menu1.html"></div>
+
+<script>
+include1HTML();
+</script>
+
+            
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+      <!-- Header-->
+               <div w3-include-html2="header1.html"></div>
+
+               <div w3-include-html1="header.html"></div>
+
+               
+                  
+                   
+                        
+                        
+                        
+
+                        
+                       
+                        <script>
+                            include1HTML();
+                            </script>
+                        
+                    
+             
+              
+            
+
+      <!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+
+            <div class="col-sm-12">
+                <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                  <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+
+
+          <!--  <span id="item"></span>-->
+
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-header">
+                <strong>Building Form</strong> 
+              </div>
+              <div class="card-body card-block">
+                <div class="form1alpha">
+                <form action="dude.php?" method="get" enctype="multipart/form-data" class="form-horizontal">
+                  <div class="row form-group">
+                   
+                    <div class="col col-md-3">
+                        
+                      
+                      <label class=" form-control-label">Fill In As Much As You Can</label></div>
+                    <div class="col-12 col-md-9">
+                      <p class="form-control-static"><ul id="form-messages">
+                          <li>Generic Message</li>
+                        </ul></p>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Building Id</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="text-input" placeholder="Building Id" class="form-control" dcvalue="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"><small class="form-text text-muted">This is a help text</small></div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col col-md-3"><label for="email-input" class=" form-control-label">Building Address</label></div>
+                    <div class="col-12 col-md-9"><input type="email" id="email-input" name="email-input" placeholder="Address" class="form-control" dcvalue=""><small class="help-block form-text">Please enter the building address</small></div>
+                  </div>
+                 <!-- <div class="row form-group">
+                    <div class="col col-md-3"><label for="password-input" class=" form-control-label">Building Co-Ordinates</label></div>
+                    <div class="col-12 col-md-9"><input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control" dcvalue="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACIUlEQVQ4EX2TOYhTURSG87IMihDsjGghBhFBmHFDHLWwSqcikk4RRKJgk0KL7C8bMpWpZtIqNkEUl1ZCgs0wOo0SxiLMDApWlgOPrH7/5b2QkYwX7jvn/uc//zl3edZ4PPbNGvF4fC4ajR5VrNvt/mo0Gr1ZPOtfgWw2e9Lv9+chX7cs64CS4Oxg3o9GI7tUKv0Q5o1dAiTfCgQCLwnOkfQOu+oSLyJ2A783HA7vIPLGxX0TgVwud4HKn0nc7Pf7N6vV6oZHkkX8FPG3uMfgXC0Wi2vCg/poUKGGcagQI3k7k8mcp5slcGswGDwpl8tfwGJg3xB6Dvey8vz6oH4C3iXcFYjbwiDeo1KafafkC3NjK7iL5ESFGQEUF7Sg+ifZdDp9GnMF/KGmfBdT2HCwZ7TwtrBPC7rQaav6Iv48rqZwg+F+p8hOMBj0IbxfMdMBrW5pAVGV/ztINByENkU0t5BIJEKRSOQ3Aj+Z57iFs1R5NK3EQS6HQqF1zmQdzpFWq3W42WwOTAf1er1PF2USFlC+qxMvFAr3HcexWX+QX6lUvsKpkTyPSEXJkw6MQ4S38Ljdbi8rmM/nY+CvgNcQqdH6U/xrYK9t244jZv6ByUOSiDdIfgBZ12U6dHEHu9TpdIr8F0OP692CtzaW/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"><small class="help-block form-text">Please enter a complex password</small></div>
+                  </div>-->
+                  <div class="row form-group">
+                    <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Textarea</label></div>
+                    <div class="col-12 col-md-9"><textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea></div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col col-md-3"><label for="select" class=" form-control-label">Building Type</label></div>
+                    <div class="col-12 col-md-9">
+                      <select name="select" id="select" class="form-control">
+                        <option value="0">Please select</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col col-md-3"><label for="selectLg" class=" form-control-label">Select Client</label></div>
+                    <div class="col-12 col-md-9">
+                      <select name="selectLg" id="selectLg" class="form-control-lg form-control">
+                        <option value="1000">Please select</option>
+                        <option value="0001">Option #1</option>
+                        <option value="0002">Option #2</option>
+                        <option value="0003">Option #3</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  </div>
+                  <div class="row form-group">
+                    <div class="col col-md-3"><label for="disabledSelect" class=" form-control-label">Sales Man</label></div>
+                    <div class="col-12 col-md-9">
+                      <select name="disabledSelect" id="disabledSelect" disabled="" class="form-control">
+                        <option value="1000">Dagnam Dave</option>
+                        <option value="0001">Option #1</option>
+                        <option value="0002">Option #2</option>
+                        <option value="0003">Option #3</option>
+                      </select>
+                    </div>
+                  </div>
+                 <!-- <div class="row form-group">
+                    <div class="col col-md-3"><label for="multiple-select" class=" form-control-label">Multiple select</label></div>
+                    <div class="col col-md-9">
+                      <select name="multiple-select" id="multiple-select" multiple="" class="form-control">
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                        <option value="4">Option #4</option>
+                        <option value="5">Option #5</option>
+                        <option value="6">Option #6</option>
+                        <option value="7">Option #7</option>
+                        <option value="8">Option #8</option>
+                        <option value="9">Option #9</option>
+                        <option value="10">Option #10</option>
+                      </select>
+                    </div>
+                  </div>-->
+                  
+              <!--    <div class="row form-group">
+                      <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
+                      <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file" dcvalue=""></div>
+                    </div>-->
+               <!--     <div class="row form-group">
+                      <div class="col col-md-3"><label for="file-multiple-input" class=" form-control-label">Multiple File input</label></div>
+                      <div class="col-12 col-md-9"><input type="file" id="file-multiple-input" name="file-multiple-input" multiple="" class="form-control-file" dcvalue=""></div>
+                    </div>-->
+                  </div>
+                  </div>
+                  <button type="button" onclick="loadDoc()">Request data</button>
+
+                  <p>Click the button several times to see if the time changes, or if the file is cached.</p>
+                  
+                  <p id="demo"></p>
+                  
+                  <script>
+                  function loadDoc() {
+                    var n=document.getElementById('textarea-input').value;
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange=function() {
+                      if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("demo").innerHTML = this.responseText;
+                      }
+                    };
+                    xhttp.open("GET", "dude.php?id=" + Math.random() + "&id2=23&id3=" +  document.getElementById("textarea-input").value + "&id4="  +  document.getElementById("select").value , true);
+                    xhttp.send();
+                  }
+                  </script>
+                  
+                  
+                  <div class="card-footer">
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                      </button>
+                      <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                      </button>
+
+
+
+
+                    </div>
+              </div>
+             
+            </div>
+          
+          </form></div>
+            <script>
+              let request = new XMLHttpRequest();
+              request.open('GET', 'http://ec2-18-130-176-221.eu-west-2.compute.amazonaws.com:3000/api/BuildingId', true);
+                request.onload = function () {
+                // Convert JSON data to an object
+                let item = JSON.parse(this.response);
+                let output = '';
+                for (
+                  var i = 0; i < item.length; i++) {
+                  output += '<div class="col-sm-6 col-lg-3"><div class="card text-white bg-flat-color-4"><div class="card-body pb-0"><div class="dropdown float-right"><button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown"><i class="fa fa-cog"></i></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><div class="dropdown-menu-content"><a class="dropdown-item" href="#">Update</a><a class="dropdown-item" href="#">Delete</a><a class="dropdown-item" href="#">Find Out More</a></div></div></div><h4 class="mb-0"><span class="">'+ item[i].BuildingUId +'</span></h4><p class="text-light">Members online</p><div class="chart-wrapper px-3" style="height:70px;" height="70">Test<br>What</div></div></div></div>'; 
+               
+               
+                }
+                document.getElementById('item').innerHTML = output;
+              }
+                  request.send();
+            </script>
+          
+            <!--/.col-->
+
+            
+            <!--/.col-->
+
+            
+            <!--/.col-->
+
+            <!--<div class="col-lg-3 col-md-6">
+                <div class="social-box facebook">
+                    <i class="fa fa-facebook"></i>
+                    <ul>
+                        <li>
+                            <sctrong><span class="count">40</span> k</strong>
+                            <span>friends</span>
+                        </li>
+                        <li>
+                            <sctrong><span class="count">450</span></strong>
+                            <span>feeds</span>
+                        </li>
+                    </ul>
+                </div>
+                -->
+                <!--/social-box-->
+           <!-- </div>--><!--/.col-->
+
+<!--
+            <div class="col-lg-3 col-md-6">
+                <div class="social-box twitter">
+                    <i class="fa fa-twitter"></i>
+                    <ul>
+                        <li>
+                            <sctrong><span class="count">30</span> k</strong>
+                            <span>friends</span>
+                        </li>
+                        <li>
+                            <sctrong><span class="count">450</span></strong>
+                            <span>tweets</span>
+                        </li>
+                    </ul>
+                </div>-->
+                <!--/social-box-->
+           <!-- </div>--><!--/.col-->
+
+
+         <!--   <div class="col-lg-3 col-md-6">
+                <div class="social-box linkedin">
+                    <i class="fa fa-linkedin"></i>
+                    <ul>
+                        <li>
+                            <sctrong><span class="count">40</span> +</strong>
+                            <span>contacts</span>
+                        </li>
+                        <li>
+                            <sctrong><span class="count">250</span></strong>
+                            <span>feeds</span>
+                        </li>
+                    </ul>
+                </div>-->
+                <!--/social-box-->
+           <!-- </div>--><!--/.col-->
+
+
+         <!--   <div class="col-lg-3 col-md-6">
+                <div class="social-box google-plus">
+                    <i class="fa fa-google-plus"></i>
+                    <ul>
+                        <li>
+                            <sctrong><span class="count">94</span> k</strong>
+                            <span>followers</span>
+                        </li>
+                        <li>
+                            <sctrong><span class="count">92</span></strong>
+                            <span>circles</span>
+                        </li>
+                    </ul>
+                </div>-->
+                <!--/social-box-->
+           <!-- </div>--><!--/.col-->
+
+           
+
+           
+
+
+          <!--popup  <div class="col-xl-3 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Total Profit</div>
+                                <div class="stat-digit">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+
+         <!--popup   <div class="col-xl-3 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">New Clients</div>
+                                <div class="stat-digit">961</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+           <!--popup
+                <div class="col-xl-3 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Active Projects</div>
+                                <div class="stat-digit">770</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+            
+
+
+        </div> <!-- .content -->
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <script src="assets/js/vendor/jquery-2.1.4.min.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script src="assets/js/plugins.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script src="assets/js/main.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+
+
+    <script src="assets/js/lib/chart-js/Chart.bundle.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script src="assets/js/dashboard.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script src="assets/js/widgets.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script src="assets/js/lib/vector-map/jquery.vmap.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script src="assets/js/lib/vector-map/jquery.vmap.min.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+    <script type="c3a03cf1d85638bfa90acc86-text/javascript">
+        ( function ( $ ) {
+            "use strict";
+
+            jQuery( '#vmap' ).vectorMap( {
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: [ '#1de9b6', '#03a9f5' ],
+                normalizeFunction: 'polynomial'
+            } );
+        } )( jQuery );
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="c3a03cf1d85638bfa90acc86-text/javascript"></script>
+<script type="c3a03cf1d85638bfa90acc86-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="c3a03cf1d85638bfa90acc86-|49" defer=""></script></body>
+</html>
