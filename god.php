@@ -44,8 +44,8 @@ var ss = ('0' + (d.getUTCSeconds() + 1)).slice(-2);
 
 var datetime = YYYY+mm+DD+HH+mmm+ss;
 
-postman.setEnvironmentVariable('secret', '621307FFD49D448C')
-console.log("hhelo")
+postman.setEnvironmentVariable('secret', '621307FFD49D448C');
+console.log("hhelo");
 var secret = '621307FFD49D448C';
 var pin = "2019";
 </script></body></html>
