@@ -29,3 +29,23 @@ if ($err) {
 } else {
  echo $response;
 }?>
+
+
+<html><head></head><body><script>
+
+
+var d = new Date();
+var YYYY = d.getUTCFullYear();
+var mm = ('0' + (d.getUTCMonth() + 1)).slice(-2);
+var DD = ('0' + (d.getUTCDate() + 1)).slice(-2);
+var HH = ('0' + (d.getUTCHours() + 1)).slice(-2);
+var mmm = ('0' + (d.getUTCMinutes() + 1)).slice(-2);
+var ss = ('0' + (d.getUTCSeconds() + 1)).slice(-2);
+
+var datetime = YYYY+mm+DD+HH+mmm+ss;
+
+postman.setEnvironmentVariable('secret', '621307FFD49D448C')
+console.log("hhelo")
+var secret = '621307FFD49D448C';
+var pin = "2019";
+</script></body></html>
