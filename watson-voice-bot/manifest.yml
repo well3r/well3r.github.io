@@ -1,0 +1,27 @@
+---
+declared-services:
+  wvb-conversation-service:
+    label: Watson Assistant-bv
+    plan: lite
+  wvb-texttospeech-service:
+    label: text_to_speech
+    plan: lite
+  wvb-speechtotext-service:
+    label: speech_to_text
+    plan: lite
+
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  name: watson-voice-bot
+  disk_quota: 512M
+  buildpack: https://github.com/cloudfoundry/python-buildpack.git
+  random-route: true
+  services:
+  - wvb-conversation-service
+  - wvb-texttospeech-service
+  - wvb-speechtotext-service
+env:
+  WORKSPACE_ID: f1bc4dcd-f560-4a13-b7d6-eee7d203401c
+  ASSISTANT_IAM_APIKEY: VY1EgygvL0vDoBrAwjGjCoBmfAtk4mpsQspkkJsUO1Iz
