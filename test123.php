@@ -7,7 +7,7 @@ require_once '/path/to/vendor/autoload.php';
 use Twilio\Rest\Client; 
  
 $sid    = "ACd5a08788b462f904aa0bb11cb569675e"; 
-$token  = "[AuthToken]"; 
+$token  = "13f17fef2d7e8fd3c75a3ecd78df81e2"; 
 $twilio = new Client($sid, $token); 
  
 $message = $twilio->messages 
